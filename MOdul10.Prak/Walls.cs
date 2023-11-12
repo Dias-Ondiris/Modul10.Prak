@@ -6,7 +6,19 @@ using System.Threading.Tasks;
 
 namespace MOdul10.Prak
 {
-    internal class Walls
+    public class Walls:IPart
     {
+        public bool IsCompleted { get; private set; }
+
+        public Walls()
+        {
+            IsCompleted = false;
+        }
+
+        public void Build()
+        {
+            Console.WriteLine("Строительство стены завершено.");
+            IsCompleted = true;
+        }
     }
 }

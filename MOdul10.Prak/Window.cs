@@ -6,7 +6,19 @@ using System.Threading.Tasks;
 
 namespace MOdul10.Prak
 {
-    internal class Window
+    public class Window:IPart
     {
+        public bool IsCompleted { get; private set; }
+
+        public Window()
+        {
+            IsCompleted = false;
+        }
+
+        public void Build()
+        {
+            Console.WriteLine("Строительство окна завершено.");
+            IsCompleted = true;
+        }
     }
 }

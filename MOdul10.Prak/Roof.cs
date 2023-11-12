@@ -6,7 +6,19 @@ using System.Threading.Tasks;
 
 namespace MOdul10.Prak
 {
-    internal class Roof
+    public class Roof:IPart
     {
+        public bool IsCompleted { get; private set; }
+
+        public Roof()
+        {
+            IsCompleted = false;
+        }
+
+        public void Build()
+        {
+            Console.WriteLine("Строительство крыши завершено.");
+            IsCompleted = true;
+        }
     }
 }

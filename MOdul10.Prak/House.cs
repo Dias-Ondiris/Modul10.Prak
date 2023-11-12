@@ -6,7 +6,34 @@ using System.Threading.Tasks;
 
 namespace MOdul10.Prak
 {
-    internal class House
+    public class House
     {
+        internal IPart[] parts;
+        public House()
+        {
+            parts = new IPart[]
+            {
+            new Basement(),
+            new Walls(),
+            new Walls(),
+            new Walls(),
+            new Walls(),
+            new Door(),
+            new Window(),
+            new Window(),
+            new Window(),
+            new Window(),
+            new Roof()
+            };
+        }
+
+        public void Show()
+        {
+            Console.WriteLine("House is built. Parts:");
+            foreach (var part in parts)
+            {
+                Console.WriteLine($"{part.Name} is {(part.IsCompleted ? "built" : "not built")}");
+            }
+        }
     }
 }

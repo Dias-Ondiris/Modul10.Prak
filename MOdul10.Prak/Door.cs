@@ -6,7 +6,19 @@ using System.Threading.Tasks;
 
 namespace MOdul10.Prak
 {
-    internal class Door
+    public class Door:IPart
     {
+        public bool IsCompleted { get; private set; }
+
+        public Door()
+        {
+            IsCompleted = false;
+        }
+
+        public void Build()
+        {
+            Console.WriteLine("Строительство двери завершено.");
+            IsCompleted = true;
+        }
     }
 }
