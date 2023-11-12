@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace MOdul10.Prak
 {
-    public class Walls:IPart
+    public class Wall : IPart
     {
         public bool IsCompleted { get; private set; }
 
-        public Walls()
+        public Wall()
         {
             IsCompleted = false;
         }

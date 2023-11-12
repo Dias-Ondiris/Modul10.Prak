@@ -8,32 +8,34 @@ namespace MOdul10.Prak
 {
     public class House
     {
-        internal IPart[] parts;
+        public Basement Basement { get; set; }
+        public List<Wall> Walls { get; set; }
+        public Door Door { get; set; }
+        public List<Window> Windows { get; set; }
+        public Roof Roof { get; set; }
+
         public House()
         {
-            parts = new IPart[]
-            {
-            new Basement(),
-            new Walls(),
-            new Walls(),
-            new Walls(),
-            new Walls(),
-            new Door(),
-            new Window(),
-            new Window(),
-            new Window(),
-            new Window(),
-            new Roof()
-            };
+            Basement = new Basement();
+            Walls = new List<Wall>();
+            Door = new Door();
+            Windows = new List<Window>();
+            Roof = new Roof();
+        }
+        public bool IsCompleted()
+        {
+            return Basement.IsCompleted && Walls.Count == 4 && Door.IsCompleted &&
+                   Windows.Count == 4 && Roof.IsCompleted;
         }
 
-        public void Show()
+
+        public void ShowBuildingStatus()
         {
-            Console.WriteLine("House is built. Parts:");
-            foreach (var part in parts)
-            {
-                Console.WriteLine($"{part.Name} is {(part.IsCompleted ? "built" : "not built")}");
-            }
+            Console.WriteLine($"Фундамент: {(Basement.IsCompleted ? "Построен" : "Не построен")}");
+            Console.WriteLine($"Стены: {Walls.Count}/4");
+            Console.WriteLine($"Дверь: {(Door.IsCompleted ? "Установлена" : "Не установлена")}");
+            Console.WriteLine($"Окна: {Windows.Count}/4");
+            Console.WriteLine($"Крыша: {(Roof.IsCompleted ? "Построена" : "Не построена")}");
         }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MOdul10.Prak
 {
-    public class Door:IPart
+    public class Door : IPart
     {
         public bool IsCompleted { get; private set; }
 
@@ -17,7 +17,7 @@ namespace MOdul10.Prak
 
         public void Build()
         {
-            Console.WriteLine("Строительство двери завершено.");
+            Console.WriteLine("Установка двери завершена.");
             IsCompleted = true;
         }
     }
